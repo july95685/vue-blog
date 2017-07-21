@@ -26,7 +26,10 @@
               </span>
           </span>
         </div>
-        <div></div>
+        <div>
+           <el-radio class="radio" v-model="radio" label="1">备选项</el-radio>
+           <el-radio class="radio" v-model="radio" label="2">备选项</el-radio>
+        </div>
         <div>
             <ul class="articleul">
               <li v-for="(x,index) in list" class="articlelist">
@@ -61,9 +64,8 @@ export default {
       },{
         date:"2017/6/27",
         title:"牵丝戏"
-      }
-
-      ]
+      }],
+      radio:"1"
     }
   }
 }
