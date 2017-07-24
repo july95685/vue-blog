@@ -28,8 +28,8 @@
                 登录
               </div>
           </li>
-          <li>
-               <div  style="">
+          <li @click="goRegistor()">
+               <div  style="" >
                 <i class="fa fa-user"></i>
                 注册
               </div>
@@ -47,7 +47,15 @@
 </template>
 
 <script>
-
+export default{
+  methods:{
+    goRegistor(){
+      this.$router.push({
+        path: './register'
+      });
+    }
+  }
+}
 </script>
 
 <style>
