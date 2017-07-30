@@ -33,14 +33,8 @@ export default {
 		console.log(data);
 		return instance.post('http://localhost:3000/api/register', data)
 	},
-	userLogin(data) {
+	findarticle(data) {
 		console.log(data);
-		return instance.post('http://localhost:3000/api/login', data)
-	},
-	getUser(){
-		return instance.get('http://localhost:3000/api/user')
-	},
-	delUser(data){
-		return instance.post('http://localhost:3000/api/delete',data)
+		return instance.post('http://localhost:3000/api/Findarticle', data)
 	}
 }

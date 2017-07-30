@@ -14,9 +14,16 @@ var userSchema = mongoose.Schema({
 	token: String,
 	create_time: Date
 })
-
+var articleSchema = mongoose.Schema({
+	email: String,
+	password: String,
+	recheck: String,
+	token: String,
+	create_time: Date
+})
 var model = {
-	User:db.model('bloguser',userSchema)
+	User:db.model('bloguser',userSchema),
+	Article:db.model('user',articleSchema)
 }
 
 module.exports = model

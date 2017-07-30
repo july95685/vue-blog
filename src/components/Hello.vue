@@ -32,7 +32,7 @@
         </div>
         <div>
             <ul class="articleul">
-              <li v-for="(x,index) in list" class="articlelist">
+              <li v-for="(x,index) in list" class="articlelist" @click = "goarticle(x)">
                 <div class="content" >
                   <div class="author">
                     <a href="#" class="authorLink">
@@ -66,6 +66,17 @@ export default {
         title:"牵丝戏"
       }],
       radio:"1"
+    }
+  },
+  methods:{
+    goarticle:function(article){
+      console.log(article);
+      this.$router.push({
+        path: "article",
+        query: {
+          id: "25739"
+        }
+      });
     }
   }
 }

@@ -24,6 +24,18 @@ const Register = (req,res) => {
 	})
 }
 
+const Findarticle = (req,res) => {
+	model.Article.find({email:req.body.email},(err,doc)=>{
+		if(err) console.log(err);
+		if(doc){
+			console.log('articlr doc');
+			console.log(doc);
+			res.send(doc);
+		}
+	})
+}
+
 module.exports = (router) => {
-	router.post('/register', Register)
+	router.post('/register', Register),
+	router.post('/Findarticle',Findarticle)
 }
