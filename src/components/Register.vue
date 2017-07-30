@@ -45,10 +45,20 @@ export default{
 	          name: user.name,
 	          password: user.password
 	        };
-	        api.registerUser(formData).then(function(data){
+	        api.userRegister(formData).then(function(data){
 		      console.log(data);
 		    })
 		}
 	}
 }
 </script>
+<style scoped>
+.box-card{
+    position: fixed;
+    left: 280px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background:#fff;
+}
+</style>

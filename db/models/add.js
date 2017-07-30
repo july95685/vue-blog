@@ -13,22 +13,23 @@ console.log('addData');
 // }
 
 var classModel = db.model('User',classSchema)
-var addData = function(data){
-    console.log('addData');
-    console.log(data);
-    var newStudent = {
-        name:data.name,
-        password:data.password
-    }
-    var userInsert = new classModel(newStudent);
-    userInsert.save(function(err){
-        if(err){
-            return console.log(err);
+var data = {
+    add:function(data){
+        console.log('addData');
+        console.log(data);
+        var newStudent = {
+            name:data.name,
+            password:data.password
         }
-        console.log('添加成功');
-    })
-
+        var userInsert = new classModel(newStudent);
+        userInsert.save(function(err){
+            if(err){
+                return console.log(err);
+            }
+            console.log('添加成功');
+        })
+        
+    }
 }
-var data = {}
-data.add = addData;
+
 module.exports = data;
