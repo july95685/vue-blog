@@ -35,6 +35,14 @@ const router = new Router({
         });
       }
     },{
+      path: '/articleContent',
+      name: 'articleContent',
+      component(resolve){
+        require.ensure(['@/components/component/articleContent.vue'],()=>{
+          resolve(require('@/components/component/articleContent.vue'))
+        });
+      }
+    },{
       path: '/account',
       name: 'account',
       component(resolve){
