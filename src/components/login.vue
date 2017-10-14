@@ -33,6 +33,7 @@ export default {
     ...mapActions(['UserLogin']),
     login(name,password){
       console.log(name,password);
+      console.log(this.$store.state);
       var opt = {
         name:name,
         password:password

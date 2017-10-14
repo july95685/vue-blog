@@ -15,6 +15,7 @@
         <span>{{info}}</span>
       </div>
       <button @click="register(name,password)">注册</button>
+      <button @click="test()">test</button>
    </div>
 </template>
 
@@ -58,6 +59,9 @@ export default{
       }
       
       
+    },
+    test(){
+      this.$store.dispatch("testDispatch");
     }
   }
 }

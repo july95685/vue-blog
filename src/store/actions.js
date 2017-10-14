@@ -4,6 +4,9 @@ const action = {
     },
     ArticleList({commit},data){
     	commit("GetArticleList",data)
+    },
+    testDispatch({commit},data){
+    	console.log("this is dispatch");
     }
 }
 export default action

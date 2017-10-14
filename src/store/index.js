@@ -29,7 +29,8 @@ const store = new Vuex.Store({
         articles: [],
         draft: {},
         drafts: {},
-        comments: []
+        comments: [],
+        test:"my value is vuex"
     },
     getters,
     actions,
