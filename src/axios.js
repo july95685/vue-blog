@@ -16,7 +16,7 @@ instance.interceptors.request.use(config => {
 	if(sessionStorage.getItem('token')){
 		config.headers.Authorization = `token ${sessionStorage.getItem('token')}`
 			.replace(/(^\")|(\"$)/g, '')
-	}	
+	}
 	return config
 }, err => {
 	return Promise.reject(err)
@@ -43,5 +43,9 @@ export default {
 	getAllUser(){
 		console.log('getAllUser');
 		return instance.get('http://localhost:3000/api/allUser')
-	}
+	},
+  saveArticle(data){
+	  console.log('data');
+    return instance.post('http://localhost:3000/api/postArticle',data)
+  }
 }

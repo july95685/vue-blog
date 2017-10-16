@@ -16,12 +16,32 @@ var userSchema = mongoose.Schema({
 		type:'String',
 		required:true
 	},
-	token: String,
+	token: 'String',
 	create_time: Date
 })
 
+var ArticleSchema = mongoose.Schema({
+  title:{
+    type:'String',
+    required:true
+  },
+  tags:{
+    type:'String',
+    required:true
+  },
+  content:{
+    type:'String',
+    required:true
+  },
+  create_time:{
+    type:Date,
+    required:true
+  }
+})
+
 var model = {
-	User:db.model('julycome',userSchema)
+	User:db.model('julycome',userSchema),
+  Article:db.model('julyarticle',ArticleSchema)
 }
 
 module.exports = model

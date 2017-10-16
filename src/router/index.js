@@ -51,8 +51,20 @@ const router = new Router({
         });
       },
       meta:{
-        requireAuth: true, 
+        requireAuth: true,
         title: '修改账户'
+      }
+    },{
+      path:'/editor',
+      name:'editor',
+      component(resolve){
+        require.ensure(['@/components/Editor.vue'],()=>{
+          resolve(require('@/components/Editor.vue'))
+        });
+      },
+      meta:{
+        requireAuth:true,
+        title:"编辑文章"
       }
     }
   ]

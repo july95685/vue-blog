@@ -106,7 +106,7 @@ const UpdateUser = (req,res) => {
 			})
 		}
 	})
-	
+
 }
 
 const AllUser = (req,res) => {
@@ -123,9 +123,34 @@ const AllUser = (req,res) => {
 	})
 }
 
+const PostArticle = (req,res) => {
+  console.log(req.body);
+  let articleData = new model.Article({
+    title:req.body.title,
+    tags: req.body.tags,
+    content: req.body.content
+  })
+  articleData.create_time = moment().format('x');
+  articleData.save(err => {
+    if(err) {
+      console.log(err)
+      res.json({
+        info: err.message
+      })
+    }
+    else{
+      console.log('register success')
+      res.json({
+        success: true
+      })
+    }
+  })
+}
+
 module.exports = (router) => {
 	router.post('/register', Register),
 	router.post('/login', Login),
 	router.post('/updateUser', UpdateUser),
-	router.get('/allUser', AllUser)
+	router.get('/allUser', AllUser),
+  router.post('/postArticle',PostArticle)
 }
